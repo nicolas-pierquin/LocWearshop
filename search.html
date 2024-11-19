@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recherche - LocWear</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>LocWear</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="search.html">Recherche</a></li>
+        <li><a href="post.html">Publier une annonce</a></li>
+        <li><a href="account.html">Mon compte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search-bar">
+      <input type="text" placeholder="Recherchez des vêtements..." class="search-input">
+      <button class="search-btn">Rechercher</button>
+    </section>
+
+    <section class="filters">
+      <h3>Filtres</h3>
+      <form>
+        <label for="category">Catégorie :</label>
+        <select id="category">
+          <option>Vestes</option>
+          <option>Robes</option>
+          <option>Chaussures</option>
+          <option>Accessoires</option>
+        </select>
+        
+        <label for="size">Taille :</label>
+        <select id="size">
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+
+        <label for="price-range">Prix (€/jour) :</label>
+        <input type="range" id="price-range" min="0" max="100" step="1">
+        <span id="price-display">50€</span>
+      </form>
+    </section>
+
+    <section class="results">
+      <h3>Résultats</h3>
+      <div class="items">
+        <div class="item">
+          <img src="image/blouson.jpg">
+          <h4>Veste en cuir</h4>
+          <p>10€/jour</p>
+          <a href="product.html" class="details-btn">Voir détails</a>
+        </div>
+        <!-- Ajoutez d'autres articles ici -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 LocWear. Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    const priceRange = document.getElementById('price-range');
+    const priceDisplay = document.getElementById('price-display');
+
+    priceRange.addEventListener('input', () => {
+      priceDisplay.textContent = `${priceRange.value}€`;
+    });
+  </script>
+</body>
+</html>
